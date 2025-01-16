@@ -1,0 +1,223 @@
+:root {
+    --color-background: #151515;
+    --color-text: #e1e1e1;
+    --color-accent: #ff69b4;
+    --min-text-width: 34rem;
+    --image-width: 300px;
+    --image-clip-offset: 0.5;
+    --content-min-width: calc(var(--image-width) + var(--min-text-width) * 2);
+    --spacing: 2rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    padding: calc(var(--spacing) * 2);
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+h1 span, h2 span {
+    color: var(--color-accent);
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+/* Layout */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: calc(var(--spacing) * 2);
+}
+
+main {
+    display: flex;
+    gap: var(--spacing);
+    min-height: 40vh;
+    position: relative;
+    margin-bottom: calc(var(--spacing) * 2);
+}
+
+/* Vertical line in center */
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Cat image positioning */
+main::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--image-width);
+    height: var(--image-width);
+    background-image: url('https://assets.codepen.io/197359/kitten-peek-transparent.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.left-content, .right-content {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+/* Content shift on wide screens */
+@media (min-width: 1200px) {
+    .left-content {
+        transform: translateX(-150px);
+    }
+    
+    .right-content {
+        transform: translateX(150px);
+    }
+}
+
+.left-content::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: var(--content-min-width);
+    width: 1px;
+    height: 50px;
+    background: red;
+    z-index: 10000;
+    visibility: hidden;
+}
+
+/* Navigation */
+.nav-list {
+    display: flex;
+    gap: calc(var(--spacing) * 1.5);
+    list-style: none;
+    align-items: center;
+}
+
+.nav-list a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: var(--color-accent);
+}
+
+.button {
+    background: var(--color-accent);
+    color: var(--color-background) !important;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+}
+
+/* Mobile menu */
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.navigation-animation-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Warning */
+.warning {
+    display: none;
+    background: #332700;
+    color: #fff3cd;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+    opacity: 0.5;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    main::after {
+        opacity: 0.2;
+    }
+    
+    .left-content, .right-content {
+        transform: none !important;
+    }
+    
+    .mobile-menu-button {
+        display: block;
+    }
+    
+    .navigation-animation-wrapper {
+        position: fixed;
+        inset: 0;
+        background: var(--color-background);
+        z-index: 100;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+    
+    .close-icon {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+}
+
+/* Menu open state */
+.site-navigation.active .navigation-animation-wrapper {
+    transform: translateX(0);
+}
+
+/* Animation support check */
+@supports not (animation-timeline: view(inline)) {
+    .warning {
+        display: block;
+    }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Theme Scroll Demo</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="warning">Your browser doesn't support scroll animations. This demo will not work.</div>
+    
+    <header class="site-header">
+        <h1>Show and <span>Hide</span></h1>
+        
+        <label class="mobile-menu-button hamburger-icon">
+            <input type="radio" name="toggle-navigation" class="open-navigation navigation-closed" autocomplete="off">
+            Menu
+        </label>
+        
+        <nav class="site-navigation">
+            <div class="navigation-animation-wrapper">
+                <label class="mobile-menu-button close-icon">
+                    <input type="radio" name="toggle-navigation" class="close-navigation navigation-opened" autocomplete="off">
+                    Close
+                </label>
+                
+                <ul class="nav-list">
+                    <li><a href="#">One</a></li>
+                    <li><a href="#">Two</a></li>
+                    <li><a href="#">Three</a></li>
+                    <li><a href="#">Four</a></li>
+                    <li><a href="#">Five</a></li>
+                    <li><a href="#" class="button">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="left-content">
+            <h2>Content-aware <span>layout</span></h2>
+        </div>
+        
+        <div class="right-content">
+            <p>Resize the window to see the layout change automatically without media queries or JavaScript.</p>
+            <p>See "<a href="#">Content-aware collapsing menu using CSS scroll animations</a>" for an explanation of what's happening here.</p>
+        </div>
+    </main>
+    
+    <footer>
+        <p>Unstable. Do not use in production.</p>
+    </footer>
+</body>
+</html>
