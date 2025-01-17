@@ -1,12 +1,10 @@
-
-
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* reset button */
+
+/* Reset button */
 button {
     appearance: none;
     background-color: transparent;
@@ -24,27 +22,32 @@ button {
     overflow: visible;
 }
 
-body{
-    min-height: 100svh;
-    background-color:#ffffff;
-    color: rgb(7, 45, 182);
-    display: grid;
-    place-content: center;
+body {
+    min-height: 100vh;
+    background-color: #0093AF;
+    color: white;
     font-size: 1rem;
     font-family: system-ui;
+    padding-top: 60px; /* Add space at the top of the page to avoid overlap with the navbar */
 }
 
+/* Fixed navbar slightly lower than the top of the page */
 nav {
-    --_clr-txt: rgb(255, 255, 255);
-    --_clr-txt-svg: rgb(147, 158, 184);
-    --_ani-speed: 6s; /* speed of rotating text */
-
+    position: fixed;
+    top: 20px; /* Adjust this value to move the navbar lower */
+    left: 0;
+    width: 100%;
+    background-color: #004792; /* Same as the body background color */
+    z-index: 10; /* Ensures navbar stays on top of other content */
     display: flex;
-    /*flex-wrap: wrap;*/
     gap: 1rem;
     font-size: 1.4rem;
+    padding: 10px 0;
+    justify-content: center;
 }
-nav>button {
+
+/* Navbar buttons */
+nav > button {
     position: relative;
     display: grid;
     place-content: center;
@@ -52,33 +55,35 @@ nav>button {
     padding: 0 1.5rem;
     text-transform: uppercase;
     font-weight: 300;
+    color: white;
 }
 
-/* place button items on top of each other */
-nav>button>span {
+/* Button icon behavior */
+nav > button > span {
     transition: all 300ms ease-in-out;
     grid-area: stack;
 }
-/* nav icon */
-nav>button>span:last-of-type {
+
+nav > button > span:last-of-type {
     margin-top: 0.25rem;
     transform: scale(0);
     transition-delay: 0ms;
     border-radius: 50%;
 }
-/* hover - hide text */
-nav>button:focus-visible>span:first-of-type,
-nav>button:hover>span:first-of-type {
+
+/* Hover effects */
+nav > button:focus-visible > span:first-of-type,
+nav > button:hover > span:first-of-type {
     transform: scale(0);
 }
-/* hover - reveal icon */
-nav>button:focus-visible>span:last-of-type,
-nav>button:hover>span:last-of-type {
+
+nav > button:focus-visible > span:last-of-type,
+nav > button:hover > span:last-of-type {
     transform: scale(1);
 }
 
-/* nav SVG circular text*/
-nav>button>svg {
+/* Rotating SVGs in the navbar */
+nav > button > svg {
     position: absolute;
     width: 200px;
     height: 200px;
@@ -89,34 +94,20 @@ nav>button>svg {
     opacity: 0;
     text-transform: uppercase;
     transition: all 300ms ease-in-out;
-    color: var(--_clr-txt-svg);
+    color: rgb(147, 158, 184);
 }
-/* hover - reveal rotating SVG */
-nav>button:focus-visible>svg,
-nav>button:hover>svg {
+
+nav > button:focus-visible > svg,
+nav > button:hover > svg {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
     transition-delay: 150ms;
-    transition: all 300ms ease-in-out;
 }
-/*
-@supports (-webkit-touch-callout: none) {
-  /* specific to iOS devices * / 
-  button svg {
-      /* adjust position for iOS * /
-      translate: -50% -50%;
-      animation: rotate var(--_ani-speed) linear infinite;
-  }
-}
-@supports not (-webkit-touch-callout: none) {
- */
 
-
- button svg g {
+button svg g {
     transform-origin: center;
-    animation: rotate var(--_ani-speed) linear infinite;
- }
-
+    animation: rotate 6s linear infinite;
+}
 
 @keyframes rotate {
     0% {
