@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curved Navigation and Images</title>
+    <title>Responsive Navigation</title>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet">
+    <link href="page.css" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
         <h1 class="sr-only">Navigation Menu</h1>
         <nav>
-            <button type="button" title="Home">
+            <a href="home.html" class="nav-link">
                 <span>Home</span>
                 <span class="material-symbols-outlined" aria-hidden="true">home</span>
                 <svg viewBox="0 0 300 300" aria-hidden="true">
@@ -24,8 +24,8 @@
                         </text>
                     </g>
                 </svg>
-            </button>
-            <button type="button">
+            </a>
+            <a href="about.html" class="nav-link">
                 <span>About</span>
                 <span class="material-symbols-outlined" aria-hidden="true">info</span>
                 <svg viewBox="0 0 300 300" aria-hidden="true">
@@ -38,8 +38,8 @@
                         </text>
                     </g>
                 </svg>
-            </button>
-            <button type="button">
+            </a>
+            <a href="services.html" class="nav-link">
                 <span>Services</span>
                 <span class="material-symbols-outlined" aria-hidden="true">linked_services</span>
                 <svg viewBox="0 0 300 300" aria-hidden="true">
@@ -52,8 +52,8 @@
                         </text>
                     </g>
                 </svg>
-            </button>
-            <button type="button">
+            </a>
+            <a href="contact.html" class="nav-link">
                 <span>Contact</span>
                 <span class="material-symbols-outlined" aria-hidden="true">email</span>
                 <svg viewBox="0 0 300 300" aria-hidden="true">
@@ -66,9 +66,8 @@
                         </text>
                     </g>
                 </svg>
-            </button>
+            </a>
         </nav>
-
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300" width="0" height="0">
             <defs>
                 <path id="circlePath" d="M 150, 150 m -50, 0 a 50,50 0 0,1 100,0 a 50,50 0 0,1 -100,0" />
@@ -76,11 +75,11 @@
         </svg>
     </header>
 
-    <img src="https://picsum.photos/id/1018/300/300" alt="Mountain landscape" class="bottom-right">
-    <img src="https://picsum.photos/id/128/300/300" alt="Lake view" class="bottom-left">
-    <img src="https://picsum.photos/id/139/300/300" alt="Nature close-up" class="top-right">
-    <img src="https://picsum.photos/id/1022/300/300" alt="Northern lights" class="top-left">
-
-
-
-
+    <div class="content-container">
+        <img src="https://picsum.photos/id/1018/300/300" alt="Mountain landscape" class="bottom-right">
+        <img src="https://picsum.photos/id/128/300/300" alt="Lake view" class="bottom-left">
+        <img src="https://picsum.photos/id/139/300/300" alt="Nature close-up" class="top-right">
+        <img src="https://picsum.photos/id/1022/300/300" alt="Northern lights" class="top-left">
+    </div>
+</body>
+</html>
