@@ -194,4 +194,24 @@ img {
 }
 
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        font-size: 1rem;
+        gap: 0.5rem;
+    }
 
+    .nav-link {
+        padding: 0.5rem;
+    }
+
+    .nav-link > svg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .content-container {
+        grid-template-columns: 1fr;
+        padding-top: 80px;
+    }
+}
