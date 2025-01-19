@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #9DE0AD;
+    color: rgb(7, 45, 182);
+    font-size: 1rem;
+    font-family: system-ui;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(157, 224, 173, 0.95);
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+nav {
+    --_clr-txt: rgb(255, 255, 255);
+    --_clr-txt-svg: rgb(147, 158, 184);
+    --_ani-speed: 6s;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav-link {
+    position: relative;
+    display: grid;
+    place-content: center;
+    grid-template-areas: 'stack';
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-link > span {
+    transition: all 300ms ease-in-out;
+    grid-area: stack;
+}
+
+.nav-link > span:last-of-type {
+    margin-top: 0.25rem;
+    transform: scale(0);
+    transition-delay: 0ms;
+    border-radius: 50%;
+}
+
+.nav-link:hover > span:first-of-type,
+.nav-link:focus > span:first-of-type {
+    transform: scale(0);
+}
+
+.nav-link:hover > span:last-of-type,
+.nav-link:focus > span:last-of-type {
+    transform: scale(1);
+}
+
+.nav-link > svg {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    opacity: 0;
+    text-transform: uppercase;
+    transition: all 300ms ease-in-out;
+    color: var(--_clr-txt-svg);
+}
+
+.nav-link:hover > svg,
+.nav-link:focus > svg {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition-delay: 150ms;
+}
+
+svg g {
+    transform-origin: center;
+    animation: rotate var(--_ani-speed) linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.content-container {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 100px 20px 20px;
+}
+
+img {
+    --r: 20px;
+    --s: 40px;
+    --x: 25px;
+    --y: 5px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--r);
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    nav {
+        font-size: 1rem;
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        padding: 0.5rem;
+    }
+
+    .nav-link > svg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .content-container {
+        grid-template-columns: 1fr;
+        padding-top: 80px;
+    }
+}
+
+/* Image mask classes */
+.top-right {
+    --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
+    --_g:conic-gradient(at calc(100% - var(--r)) var(--r),#0000 25%,#000 0);
+    --_d:(var(--s) + var(--r));
+    mask:
+        calc(100% - var(--_d) - var(--x)) 0 var(--_m),
+        100% calc(var(--_d) + var(--y)) var(--_m),
+        radial-gradient(var(--s) at 100% 0,#0000 99%,#000 calc(100% + 1px)) 
+        calc(-1*var(--r) - var(--x)) calc(var(--r) + var(--y)),
+        var(--_g) calc(-1*var(--_d) - var(--x)) 0,
+        var(--_g) 0 calc(var(--_d) + var(--y));
+    mask-repeat: no-repeat;
+}
+
+.top-left {
+    --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
+    --_g:conic-gradient(at var(--r) var(--r),#000 75%,#0000 0);
+    --_d:(var(--s) + var(--r));
+    mask:
+        calc(var(--_d) + var(--x)) 0 var(--_m),
+        0 calc(var(--_d) + var(--y)) var(--_m),
+        radial-gradient(var(--s) at 0 0,#0000 99%,#000 calc(100% + 1px)) 
+        calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
+        var(--_g) calc(var(--_d) + var(--x)) 0,
+        var(--_g) 0 calc(var(--_d) + var(--y));
+    mask-repeat: no-repeat;
+}
+
+.bottom-left {
+    --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
+    --_g:conic-gradient(from 180deg at var(--r) calc(100% - var(--r)),#0000 25%,#000 0);
+    --_d:(var(--s) + var(--r));
+    mask:
+        calc(var(--_d) + var(--x)) 100% var(--_m),
+        0 calc(100% - var(--_d) - var(--y)) var(--_m),
+        radial-gradient(var(--s) at 0 100%,#0000 99%,#000 calc(100% + 1px)) 
+        calc(var(--r) + var(--x)) calc(-1*var(--r) - var(--y)),
+        var(--_g) calc(var(--_d) + var(--x)) 0,
+        var(--_g) 0 calc(-1*var(--_d) - var(--y));
+    mask-repeat: no-repeat;
+}
+
+.bottom-right {
+    --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
+    --_g:conic-gradient(from 90deg at calc(100% - var(--r)) calc(100% - var(--r)),#0000 25%,#000 0);
+    --_d:(var(--s) + var(--r));
+    mask:
+        calc(100% - var(--_d) - var(--x)) 100% var(--_m),
+        100% calc(100% - var(--_d) - var(--y)) var(--_m),
+        radial-gradient(var(--s) at 100% 100%,#0000 99%,#000 calc(100% + 1px)) 
+        calc(-1*var(--r) - var(--x)) calc(-1*var(--r) - var(--y)),
+        var(--_g) calc(-1*var(--_d) - var(--x)) 0,
+        var(--_g) 0 calc(-1*var(--_d) - var(--y));
+    mask-repeat: no-repeat;
+}
