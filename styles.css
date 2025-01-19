@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 .logo-container {
     display: flex;
@@ -10,22 +9,15 @@
 }
 
 *, ::before, ::after {
-=======
-* {
->>>>>>> 8a9ccd4e90e406eb906e6141f8361d543e422bf3
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-=======
-button {
->>>>>>> 8a9ccd4e90e406eb906e6141f8361d543e422bf3
     appearance: none;
     background-color: transparent;
     border: none;
@@ -34,7 +26,6 @@ button {
     text-align: inherit;
     font: inherit;
     color: inherit;
-<<<<<<< HEAD
     line-height: inherit;
     cursor: pointer;
 }
@@ -48,44 +39,6 @@ nav {
     background-color: transparent;
     flex-wrap: wrap;
     margin-top: 20px; 
-=======
-    text-decoration: none;
-    text-transform: none;
-    line-height: normal;
-    overflow: visible;
-}
-
-body {
-    min-height: 100vh;
-    background-color: #9DE0AD;
-    color: rgb(7, 45, 182);
-    font-size: 1rem;
-    font-family: system-ui;
-    display: grid;
-    grid-template-columns: auto auto;
-    place-content: center;
-    gap: 20px;
-}
-
-.site-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-nav {
-    --_clr-txt: rgb(255, 255, 255);
-    --_clr-txt-svg: rgb(147, 158, 184);
-    --_ani-speed: 6s;
-
-    display: flex;
-    gap: 1rem;
-    font-size: 1.4rem;
-    margin-top: 20px;
-    padding: 10px 20px;
-    justify-content: center;
-    width: 100%;
->>>>>>> 8a9ccd4e90e406eb906e6141f8361d543e422bf3
 }
 
 nav > button {
@@ -103,7 +56,6 @@ nav > button {
     transition: background-size 0.3s ease; /* Smooth transition */
 }
 
-<<<<<<< HEAD
 nav > button::before {
     content: '';
     position: absolute;
@@ -121,31 +73,6 @@ nav > button:hover::before {
 
 nav > button::after {
     content: attr(title);
-=======
-nav > button > span {
-    transition: all 300ms ease-in-out;
-    grid-area: stack;
-}
-
-nav > button > span:last-of-type {
-    margin-top: 0.25rem;
-    transform: scale(0);
-    transition-delay: 0ms;
-    border-radius: 50%;
-}
-
-nav > button:focus-visible > span:first-of-type,
-nav > button:hover > span:first-of-type {
-    transform: scale(0);
-}
-
-nav > button:focus-visible > span:last-of-type,
-nav > button:hover > span:last-of-type {
-    transform: scale(1);
-}
-
-nav > button > svg {
->>>>>>> 8a9ccd4e90e406eb906e6141f8361d543e422bf3
     position: absolute;
     inset: 0;
     transition: opacity 0.3s 150ms, translate 0.3s 150ms;
@@ -155,7 +82,6 @@ nav > button > svg {
     text-wrap: nowrap; 
     font-size: 0.9rem;
     opacity: 0;
-<<<<<<< HEAD
     translate: 0 10px;
     color: inherit;
 
@@ -241,121 +167,3 @@ nav > .services-btn:hover {
 nav > .contact-btn:hover {
     background-color: #c0392b;
 }
-=======
-    text-transform: uppercase;
-    transition: all 300ms ease-in-out;
-    color: var(--_clr-txt-svg);
-}
-
-nav > button:focus-visible > svg,
-nav > button:hover > svg {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    transition-delay: 150ms;
-}
-
-button svg g {
-    transform-origin: center;
-    animation: rotate var(--_ani-speed) linear infinite;
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-img {
-    --r: 20px;
-    --s: 40px;
-    --x: 25px;
-    --y: 5px;
-    width: 200px;
-    border-radius: var(--r);
-}
-
-.top-right {
-    --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
-    --_g:conic-gradient(at calc(100% - var(--r)) var(--r),#0000 25%,#000 0);
-    --_d:(var(--s) + var(--r));
-    mask:
-        calc(100% - var(--_d) - var(--x)) 0 var(--_m),
-        100% calc(var(--_d) + var(--y)) var(--_m),
-        radial-gradient(var(--s) at 100% 0,#0000 99%,#000 calc(100% + 1px)) 
-        calc(-1*var(--r) - var(--x)) calc(var(--r) + var(--y)),
-        var(--_g) calc(-1*var(--_d) - var(--x)) 0,
-        var(--_g) 0 calc(var(--_d) + var(--y));
-    mask-repeat: no-repeat;
-}
-
-.top-left {
-    --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
-    --_g:conic-gradient(at var(--r) var(--r),#000 75%,#0000 0);
-    --_d:(var(--s) + var(--r));
-    mask:
-        calc(var(--_d) + var(--x)) 0 var(--_m),
-        0 calc(var(--_d) + var(--y)) var(--_m),
-        radial-gradient(var(--s) at 0 0,#0000 99%,#000 calc(100% + 1px)) 
-        calc(var(--r) + var(--x)) calc(var(--r) + var(--y)),
-        var(--_g) calc(var(--_d) + var(--x)) 0,
-        var(--_g) 0 calc(var(--_d) + var(--y));
-    mask-repeat: no-repeat;
-}
-
-.bottom-left {
-    --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
-    --_g:conic-gradient(from 180deg at var(--r) calc(100% - var(--r)),#0000 25%,#000 0);
-    --_d:(var(--s) + var(--r));
-    mask:
-        calc(var(--_d) + var(--x)) 100% var(--_m),
-        0 calc(100% - var(--_d) - var(--y)) var(--_m),
-        radial-gradient(var(--s) at 0 100%,#0000 99%,#000 calc(100% + 1px)) 
-        calc(var(--r) + var(--x)) calc(-1*var(--r) - var(--y)),
-        var(--_g) calc(var(--_d) + var(--x)) 0,
-        var(--_g) 0 calc(-1*var(--_d) - var(--y));
-    mask-repeat: no-repeat;
-}
-
-.bottom-right {
-    --_m:/calc(2*var(--r)) calc(2*var(--r)) radial-gradient(#000 70%,#0000 72%);
-    --_g:conic-gradient(from 90deg at calc(100% - var(--r)) calc(100% - var(--r)),#0000 25%,#000 0);
-    --_d:(var(--s) + var(--r));
-    mask:
-        calc(100% - var(--_d) - var(--x)) 100% var(--_m),
-        100% calc(100% - var(--_d) - var(--y)) var(--_m),
-        radial-gradient(var(--s) at 100% 100%,#0000 99%,#000 calc(100% + 1px)) 
-        calc(-1*var(--r) - var(--x)) calc(-1*var(--r) - var(--y)),
-        var(--_g) calc(-1*var(--_d) - var(--x)) 0,
-        var(--_g) 0 calc(-1*var(--_d) - var(--y));
-    mask-repeat: no-repeat;
-}
-
-
-
-
-
-@media (max-width: 480px) {
-    nav {
-        font-size: 0.8rem;
-    }
-
-    /* nav > button {
-        padding: 5px;
-    } */
-
-    img {
-        max-width: 100%; /* Ensure images fit ultra-small screens */
-    }
-}
->>>>>>> 8a9ccd4e90e406eb906e6141f8361d543e422bf3
