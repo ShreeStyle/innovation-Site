@@ -6,64 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PromoCraft</title>
     <link href="styles.css" rel="stylesheet">
-    <!-- Import elegant serif font -->
     <link href="https://fonts.googleapis.com/css2?family=Gilda+Display:wght@400&display=swap" rel="stylesheet">
     
     <style>
-        body {
-            margin: 0;
-            padding: 40px;
-            background: #ffffff;
-        }
+        /* General Body Styles */
+body {
+    
+    background-color: #f8f9fa;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* Main Heading Styles */
+.main-heading {
+    
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-        .main-heading {
+  
+        font-family: 'Gilda Display', serif;
+        font-size: 96px;
+        font-weight: 400;
+        line-height: 1.1;
+       
+    }
+
+    .promo-indent {
+        display: inline-block;
+        padding-left: 100px; /* Adds indentation to the start of the line */
+    }
+    
+    .first-word {
+        color: #E8927C;  /* Coral/salmon color */
+    }
+
+
+/* For Italic and Bold Text */
+.italic-text {
+    font-style: italic;
+   font-size: 4rem;
+    color: #28a745; /* Green color */
+
+    font-style: italic;
             font-family: 'Gilda Display', serif;
-            font-size: 96px;
-            font-weight: 400;
-            line-height: 1.1;
-            margin: 0;
-            padding: 0;
-        }
+}
 
-        .first-word {
-            color: #E8927C;  /* Coral/salmon color */
-        }
+/* For Uppercase Text */
+.uppercase-text {
+    font-style: italic; 
+    color: #2f33ba; /* Coral color */
+    font-size: 4rem; /* Slightly smaller */
+    font-family: 'Gilda Display', serif;
+}
 
-        .sec-word{
-            color:green;
+/* For Highlighted Text */
+.highlight-text {
+    background-color: yellow;
+    color: #333;
+    font-size: 1.1rem; /* Slightly smaller */
+}
 
-        }
+/* For Small Caps Text */
+.small-caps-text {
+    font-variant: small-caps;
+    color: #ff8c00; /* Orange color */
+    font-size: 1rem; /* Small size */
+}
 
+/* Styling Paragraph */
+p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
 
-        .forth-word{
-            color:purple;
-        }
-        .italic-text {
-            font-style: italic;
-            
-            font-family: 'Gilda Display', serif;
-            color: rgb(57, 26, 180);
-        }
-
-        .description {
-            font-family: 'Times New Roman', serif;
-            font-size: 24px;
-            line-height: 1.5;
-            margin-top: 20px;
-            color: #000000;
-        }
-
-        .code {
-            font-family: 'Courier New', monospace;
-            font-size: 24px;
-            margin-top: 10px;
-            color: #000000;
-        }
     </style>
 </head>
 <body>
@@ -119,6 +135,24 @@
     </div>
 
 
+    
+
+    
+
+    <div class="container">
+        <h1 class="main-heading">
+            <span class="first-word">Welcome to PromoCraft</span>
+            <br>
+            <span class="italic-text promo-indent"><b>PromoCraft<b> makes it super easy</span>
+            <span class="uppercase-text">to promote</span> 
+            <span class="highlight-text">custom promotional materials.</span>
+            <span class="small-caps-text">Just upload your logo, add your text, and pick a background to make your brand pop </span>
+        </h1>
+        
+    </div>
+
+
+   
     <div class="wall-of-text">
         <svg viewBox="0 0 500 572" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
             <text id="word-1">Every</text>
@@ -155,19 +189,7 @@
     
 
 
-    <div class="container">
-        
-
-
-        <h1 class="main-heading">
-            <span class="first-word">Welcome to PromoCraft</span>
-        </h1>
-
-
-
-       
-       
-    </div>
+    
     
 </body>
 </html>
