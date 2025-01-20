@@ -30,55 +30,63 @@ body {
        
     }
 
-    .promo-indent {
-        display: inline-block;
-        padding-left: 100px; /* Adds indentation to the start of the line */
-    }
+    
     
     .first-word {
-        color: #E8927C;  /* Coral/salmon color */
+        color: #E8927C;
+        font-size: 4rem;  /* Coral/salmon color */
+        text-align: center;
+       display: block;
+    }
+
+    .first1-word {
+        line-height: 2;
+        color: #E8927C;
+        font-size: 3rem;  /* Coral/salmon color */
+        text-align: center;
+       display: block;
+    }
+
+    .highlight-bg-text {
+        background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient background */
+        color: white; /* Change text color for better contrast */
+        padding: 2px 5px;
+        border-radius: 3px;
+        text-align: center;
+        
+    }
+    
+    .animated-text {
+        text-align: center;
     }
 
 
-/* For Italic and Bold Text */
-.italic-text {
-    font-style: italic;
-   font-size: 4rem;
-    color: #28a745; /* Green color */
-
-    font-style: italic;
-            font-family: 'Gilda Display', serif;
+.highlight-bg-text {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient background */
+    color: white; /* Change text color for better contrast */
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 4rem;
+    text-align: center;
+    display: block; 
 }
 
-/* For Uppercase Text */
-.uppercase-text {
-    font-style: italic; 
-    color: #2f33ba; /* Coral color */
-    font-size: 4rem; /* Slightly smaller */
-    font-family: 'Gilda Display', serif;
+.animated-text {
+    text-align: center;
 }
 
 /* For Highlighted Text */
 .highlight-text {
+    line-height: 1.5;
     background-color: yellow;
     color: #333;
-    font-size: 1.1rem; /* Slightly smaller */
+    font-size: 3rem; /* Slightly smaller */
+    text-align: center;
+       display: block;
 }
 
-/* For Small Caps Text */
-.small-caps-text {
-    font-variant: small-caps;
-    color: #ff8c00; /* Orange color */
-    font-size: 1rem; /* Small size */
-}
 
-/* Styling Paragraph */
-p {
-    margin-top: 20px;
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.6;
-}
+
 
     </style>
 </head>
@@ -141,16 +149,15 @@ p {
 
     <div class="container">
         <h1 class="main-heading">
-            <span class="first-word">Welcome to PromoCraft</span>
-            <br>
-            <span class="italic-text promo-indent"><b>PromoCraft<b> makes it super easy</span>
-            <span class="uppercase-text">to promote</span> 
+            
+            <span class="first-word"><b>PromoCraft<b><br> makes it super easy</span>
+                <span class="changing-text uppercase-text highlight-bg-text" id="changingText">promote.</span> 
+
             <span class="highlight-text">custom promotional materials.</span>
-            <span class="small-caps-text">Just upload your logo, add your text, and pick a background to make your brand pop </span>
+            <span class="first1-word">Just upload your logo, add your text, and pick a background to make your brand pop </span>
         </h1>
         
     </div>
-
 
    
     <div class="wall-of-text">
@@ -189,7 +196,7 @@ p {
     
 
 
-    
+    <script src="script.js"></script> 
     
 </body>
 </html>

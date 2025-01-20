@@ -245,13 +245,43 @@ body:has(input[type=radio]:nth-child(4):checked),
 .controls > input:checked {
     scale: 1.05;
 }
+
+
+
+
+
+
+
+
+/* 
 .wall-of-text {
     position: relative;
     border: 1px solid rgba(255, 255, 255, 0.35);
-    width: min(calc(100% - 2rem), 600px);
+    width: min(100vw, 400px); 
+    height: 400px;
     padding: clamp(0.75rem, 1.5vw, 2rem);
     background-color: black;
-}
+    margin: 0rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+} */
+
+
+ 
+.wall-of-text {
+     position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    width: min(50vw, 690px);
+    padding: clamp(0.75rem, 1.5vw, 2rem);
+    background-color: black; 
+    
+} 
+
+
+
+
 .wall-of-text::before {
     content: '';
     position: absolute;
@@ -262,10 +292,59 @@ body:has(input[type=radio]:nth-child(4):checked),
     transition: background-color 300ms ease-in-out;
 }
 svg {
-    width: 100%;
-    height: auto;
+    width: 90%;
+
+    height: 90%;
     overflow: visible;
+
+} 
+
+
+
+
+/* Responsive text scaling */
+@media (max-width: 768px) {
+    .wall-of-text {
+        width: 90vw;
+        height: 350px;
+        transform: scale(0.7);
+    }
+    
+    svg > text {
+        font-size: calc(var(--f-s) * 0.8); /* Reduce font size on mobile */
+    }
 }
+
+@media (max-width: 480px) {
+    .wall-of-text {
+        height: 300px;
+        transform: scale(0.6);
+    }
+    
+    svg > text {
+        font-size: calc(var(--f-s) * 0.7);
+    }
+}
+
+/* Navigation styles update */
+nav > button {
+    transition: transform 0.3s ease, background-size 0.3s ease;
+}
+
+nav > button:hover {
+    transform: scale(1.1);
+}
+
+/* Add active state for navigation */
+nav > button.active {
+    background-color: rgba(3, 105, 161, 0.2);
+    transform: scale(0.95);
+}
+
+
+
+
+
 svg > text {
     fill: var(--c, var(--clr-txt));
     transform: translate(var(--x, -50%), var(--y, -50%));
@@ -274,7 +353,41 @@ svg > text {
     text-transform: var(--t);
     transition: fill 300ms ease-in-out;
 }
-#word-1 { --x: 16px; --y: 50px; --f-w: 600; --f-s: 3rem; --t: uppercase; }
+ 
+
+body {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem; 
+    padding: 1rem;
+    margin: 0;
+    background-color: black;
+}
+
+
+ 
+
+
+
+
+
+.container {
+    width: 80%;  /* Ensures it fits the width of the screen */
+    max-width: 80%;
+    height: 80vh;  /* Height relative to the viewport height */
+    overflow: hidden;  /* Prevent overflow */
+}
+
+
+
+
+
+ 
+
+
+ #word-1 { --x: 16px; --y: 50px; --f-w: 600; --f-s: 3rem; --t: uppercase; }
 #word-2 { --x: 45px; --y: 93px; --f-s: 3.5rem; --f-w: 300; --t: uppercase; }
 #word-3 { --x: 152px; --y: 70px; --f-s: 1.5rem; --f-w: 300; }
 #word-4 { --x: 170px; --y: 102px; --f-s: 6.8rem; --f-w: 600; --c: var(--clr-cta); }
