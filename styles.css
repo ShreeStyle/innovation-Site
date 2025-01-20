@@ -296,3 +296,15 @@ svg > text {
 #word-20 { --x: 102px; --y: 510px; --f-s: 3rem; --f-w: 300; }
 #word-21 { --x: 190px; --y: 530px; --f-s: 4rem; --f-w: 600; --t: uppercase; }
 #word-22 { --x: 390px; --y: 601px; --f-s: 10rem; --c: var(--clr-cta); }
+
+
+.highlight-bg-text {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Gradient background */
+    color: white; /* Change text color for better contrast */
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.animated-text {
+    text-align: center;
+}
