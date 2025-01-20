@@ -167,3 +167,132 @@ nav > .services-btn:hover {
 nav > .contact-btn:hover {
     background-color: #c0392b;
 }
+
+
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+:root {
+    --clr-txt: white;
+    --clr-radio-1: rgb(239, 68, 68);
+    --clr-radio-2: rgb(2, 132, 199);
+    --clr-radio-3: rgb(245, 158, 11);
+    --clr-radio-4: rgb(132, 204, 22);
+    --clr-cta: var(--clr-radio-1);
+}
+body {
+    background-color: black;
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1rem;
+    font-family: system-ui;
+    color: var(--clr-txt);
+}
+body:has(input[type=radio]:nth-child(1):checked),
+.controls > input:nth-child(1) {
+    --clr-cta: var(--clr-radio-1);
+}
+body:has(input[type=radio]:nth-child(2):checked),
+.controls > input:nth-child(2) {
+    --clr-cta: var(--clr-radio-2);
+}
+body:has(input[type=radio]:nth-child(3):checked),
+.controls > input:nth-child(3) {
+    --clr-cta: var(--clr-radio-3);
+}
+body:has(input[type=radio]:nth-child(4):checked),
+.controls > input:nth-child(4) {
+    --clr-cta: var(--clr-radio-4);
+}
+.controls {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0.25rem;
+    display: flex;
+    gap: 0.25rem;
+}
+.controls > input {
+    --_size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    appearance: none;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: var(--_size);
+    height: var(--_size);
+    background-color: var(--clr-cta);
+    scale: 0.8;
+    transition: scale 300ms ease-in-out;
+    cursor: pointer;
+}
+.controls > input:focus-visible,
+.controls > input:hover {
+    scale: 1;
+}
+.controls > input:checked {
+    scale: 1.05;
+}
+.wall-of-text {
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    width: min(calc(100% - 2rem), 600px);
+    padding: clamp(0.75rem, 1.5vw, 2rem);
+    background-color: black;
+}
+.wall-of-text::before {
+    content: '';
+    position: absolute;
+    inset: -14px;
+    background-color: var(--clr-cta);
+    z-index: -1;
+    opacity: 0.35;
+    transition: background-color 300ms ease-in-out;
+}
+svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+svg > text {
+    fill: var(--c, var(--clr-txt));
+    transform: translate(var(--x, -50%), var(--y, -50%));
+    font-size: var(--f-s, 2rem);
+    font-weight: var(--f-w, 400);
+    text-transform: var(--t);
+    transition: fill 300ms ease-in-out;
+}
+#word-1 { --x: 16px; --y: 50px; --f-w: 600; --f-s: 3rem; --t: uppercase; }
+#word-2 { --x: 45px; --y: 93px; --f-s: 3.5rem; --f-w: 300; --t: uppercase; }
+#word-3 { --x: 152px; --y: 70px; --f-s: 1.5rem; --f-w: 300; }
+#word-4 { --x: 170px; --y: 102px; --f-s: 6.8rem; --f-w: 600; --c: var(--clr-cta); }
+#word-5 { --x: 14px; --y: 138px; --f-s: 1.8rem; --f-w: 300; }
+#word-6 { --x: 80px; --y: 142px; --f-s: 4rem; --f-w: 600; --t: uppercase; }
+#word-7 { --x: 215px; --y: 138px; --f-s: 1.8rem; --f-w: 300; }
+#word-8 { --x: 136px; --y: 170px; --f-s: 1.6rem; --f-w: 300; }
+#word-9 { --x: 161px; --y: 180px; --f-s: 4rem; --f-w: 300; }
+#word-10 { --x: 107px; --y: 194px; --f-s: 1.8rem; --f-w: 300; --c: var(--clr-cta); transform: rotate(70deg) translate(var(--x), var(--y)); }
+#word-11 { --x: 123px; --y: 240px; --f-s: 5.065rem; --f-w: 600; --t: uppercase; }
+#word-12 { --x: 214px; --y: 302px; --f-s: 3rem; --f-w: 300; }
+#word-13 { --x: 161px; --y: 346px; --f-s: 5rem; --c: var(--clr-cta); }
+#word-14 { --x: 102px; --y: 378px; --f-s: 2.6rem; --f-w: 300; --t: uppercase; }
+#word-15 { --x: 226px; --y: 378px; --f-s: 2.6rem; --f-w: 300; --t: uppercase; }
+#word-16 { --x: 17px; --y: 437px; --f-s: 3rem; --c: var(--clr-cta); }
+#word-17 { --x: 40px; --y: 437px; --f-s: 5rem; --f-w: 600; --t: uppercase; }
+#word-18 { --x: 320px; --y: 437px; --f-s: 2rem; }
+#word-19 { --x: 59px; --y: 482px; --f-s: 5.1rem; --f-w: 400; --c: var(--clr-cta); }
+#word-20 { --x: 102px; --y: 510px; --f-s: 3rem; --f-w: 300; }
+#word-21 { --x: 190px; --y: 530px; --f-s: 4rem; --f-w: 600; --t: uppercase; }
+#word-22 { --x: 390px; --y: 601px; --f-s: 10rem; --c: var(--clr-cta); }
