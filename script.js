@@ -11,4 +11,4 @@ function changeText() {
 }
 
 // Change the text every 2 seconds (2000 milliseconds)
-setInterval(changeText, 2000);
+setInterval(changeText, 1500);
