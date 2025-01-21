@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .main-heading {
@@ -392,7 +392,7 @@ footer p {
 .poloroidwhole {
     box-sizing: border-box;
     background: white;
-    padding: 1rem;
+    padding: 0rem;
 }
 
 .wrapper {
@@ -463,6 +463,50 @@ footer p {
         font-size: 1rem;
     }
 }
+
+/* glow button  */
+/* CSS */
+/* 
+.glow-button:hover {
+    box-shadow: 0 0 20px #ced4da, 0 0 30px #ced4da, 0 0 40px #ced4da, 0 0 50px #ced4da;
+    transform: scale(1.1);
+}
+
+.glow-button:active {
+    transform: scale(1);
+    box-shadow: 0 0 10px #8e9aaf, 0 0 20px #ced4da;
+} */
+.relative-container {
+    position: relative;
+    height: 125px;
+    width: 100%;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.glow-button {
+    
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 0px 0px;
+    font-size: 3rem;
+    height: 65%;
+    width: 65%;
+    background: linear-gradient(90deg, #8e9aaf, #ced4da);
+    
+}
+
+/* Optional: Adjust font size and padding on smaller screens */
+@media (max-width: 768px) {
+    .glow-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
 
 /* Adjust hover effects for smaller screens */
 .item:hover {
