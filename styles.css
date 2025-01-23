@@ -476,28 +476,7 @@ footer p {
     transform: scale(1);
     box-shadow: 0 0 10px #8e9aaf, 0 0 20px #ced4da;
 } */
-.relative-container {
-    position: relative;
-    height: 125px;
-    width: 100%;
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-}
 
-.glow-button {
-    
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    padding: 0px 0px;
-    font-size: 3rem;
-    height: 65%;
-    width: 65%;
-    background: linear-gradient(90deg, #8e9aaf, #ced4da);
-    
-}
 
 /* Optional: Adjust font size and padding on smaller screens */
 @media (max-width: 768px) {
@@ -527,3 +506,89 @@ footer p {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
     transition: all 0.35s;
 }
+
+
+
+/* styles button */
+
+@property --a {
+    syntax: "<percentage>";
+    initial-value: 0%;
+    inherits: true;
+  }
+  
+  @property --hue {
+    syntax: "<angle>";
+    initial-value: 170deg;
+    inherits: false;
+  }
+  
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  main {
+    display: grid;
+    place-items: center;
+    height: 20vh;
+  }
+  
+  .dark button {
+    --a: 0%;
+    --hue: 170deg;
+    --x: 50;
+    --y: 50;
+    --button: hsl(var(--hue), 66%, 66%);
+    --size: 2em;
+  
+    background: transparent;
+    color: hsla(var(--hue), 80%, 30%, 0.7);
+    font-size: 1.8em;
+    position: relative;
+    padding: calc(var(--size)) calc(var(--size) * 1.5);
+    border: none;
+    cursor: pointer;
+    transition: --a 0.5s ease-in-out, scale 0.5s ease-in-out;
+    scale: 0.92;
+    isolation: isolate;
+  }
+  
+  .dark button:hover {
+    --a: 100%;
+    scale: 1;
+  }
+  
+  .dark button:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    filter: blur(12px) url(#goo);
+    background-image: linear-gradient(0deg, var(--button), var(--button)),
+      radial-gradient(
+        40% 70% at calc(var(--x) * 1%) calc(var(--y) * 1%),
+        hsla(var(--hue), 77%, 77%, var(--a)) 0%,
+        transparent 90%
+      );
+    background-clip: content-box, border-box;
+    padding: 24px;
+    z-index: -1;
+  }
+  
+  @keyframes color {
+    from {
+      --hue: 170deg;
+    }
+    to {
+      --hue: 530deg;
+    }
+  }
+  
+  .dark button,
+  .dark button:before {
+    animation: color 20s linear infinite both;
+  }
+  
+  
